@@ -1,0 +1,23 @@
+form {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    .title {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        color: blue;
+    }
+
+    .inputBlock {
+        margin-bottom: 10px;
+        width: 100%;
+        input {
+            width: 100%;
+        }
+    }
+
+    button {
+        padding: 5px 10px;
+    }
+}

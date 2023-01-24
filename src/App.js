@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Form from "./components/Form/Form";
+import Accordion from "./components/Accordion/Accordion";
+import Modal from "./components/Modal/Modal";
 import './App.css';
 
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [isModalActive, setModalActive] = useState(true)
+
+    return (
+        <div className='app'>
+            <Form />
+
+            <div className='separator'/>
+
+            <Accordion title={'Accordion title'} content={'Accordion Content'}/>
+            <Accordion title={'HohohooHohoh'} content={'AHahahhaHAHH'}/>
+
+            <div className='separator'/>
+
+            <button style={{cursor: 'pointer', padding: '10px'}}
+                    onClick={() => setModalActive(true)}
+            >Open modal window</button>
+
+            <Modal isActive={isModalActive} setIsActive={setModalActive}> Hahahah</Modal>
+        </div>
+    );
 }
 
 export default App;
